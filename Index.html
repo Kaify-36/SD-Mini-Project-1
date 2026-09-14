@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Profile</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+
+
+        .header {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 25px 20px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            border-bottom: 3px solid #0ea5a5;
+        }
+
+        #main-title {
+            font-size: 34px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .header nav a:hover {
+            color: #2dd4bf;
+        }
+
+        main {
+            width: 95%;
+            max-width: 1300px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 35px;
+            margin-bottom: 25px;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+
+            box-sizing: border-box;
+        }
+
+        .card h2 {
+            color: #1e293b;
+            margin-top: 0;
+            font-size: 24px;
+            border-left: 4px solid #0ea5a5;
+            padding-left: 12px;
+        }
+
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .about-text {
+            flex: 1 1 300px;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .about-photo {
+            flex: 1 1 280px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 4px solid #0ea5a5;
+        }
+
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .skills-list li {
+            background-color: #e6fffa;
+            color: #0f766e;
+            border: 1px solid #99f6e4;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            flex: 1 1 280px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #0ea5a5;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+
+        .project-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        #contact p {
+            font-size: 15px;
+        }
+
+        #contact a {
+            color: #0d9488;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        #contact label {
+            font-weight: 600;
+            color: #334155;
+            font-size: 14px;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            max-width: 420px;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-family: inherit;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: none;
+            border-color: #0ea5a5;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #0f766e;
+            color: white;
+            padding: 12px 24px;
+            margin-top: 12px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #0d9488;
+        }
+
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #1e293b;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .projects-container {
+                flex-direction: column;
+            }
+
+            #main-title {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 id="main-title">MD Hasnat Monowar Kaify</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section id="about" class="card">
+            <h2>About Me</h2>
+
+            <div class="about-content">
+
+                <div class="about-text">
+                    <p class="description">
+                        Hi, My name is Hasnat Monowar Kaify.I am a student in Computer Science and Engineering.
+                        I'm interested in web, software, and application development that solves current real life problems in Bangladesh.
+                        In the future i want build more and more technologies to address harder problems in Bangladesh.
+                        I like turning ideas into clean, functional interfaces
+                        and I'm always looking to learn new tools and
+                        frameworks along the way.I am also intrested in Cybersecurity.
+                    </p>
+                </div>
+
+                <div class="about-photo">
+                    <img
+                        class="profile-image"
+                        src="Myimage.jpeg"
+                        alt="Photo of Your Name"
+                    >
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="card">
+            <h2>Skills</h2>
+
+            <ul class="skills-list">
+                <li>C</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>CSS</li>
+                <li>HTML</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="card">
+            <h2>Projects</h2>
+
+            <div class="projects-container">
+
+                <article class="project-card">
+                    <h3>Project 1:Smart Transport Traffic Management</h3>
+                    <p>
+                        The Smart Transport Traffic Management System is an ESP32-based project designed to improve bus management at stoppages. RFID readers detect when a bus enters and leaves the stoppage, while ESP-NOW sends timing signals to a small ESP32 device on the bus. The system monitors the allowed stopping time and uses LEDs and a buzzer to indicate normal operation or overstaying, helping make public transport management more organized and efficient.
+
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Project 2: Rural District Education & Scholarship Management System</h3>
+                    <p>
+                        A C++ desktop application built with wxWidgets that tackles two root causes of rural illiteracy in Bangladesh: insufficient schools and poverty-driven dropout. The system lets government officials track school shortages across districts and approve student scholarships, while students register and submit their information through a separate portal — all backed by a nested file-based data architecture.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+        <section id="contact" class="card">
+            <h2>Contact Me</h2>
+
+            <p>Email: <a href="mailto:hasnatmonower@gmail.com">hasnatmonower@gmail.com</a></p>
+
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+
+                <label for="message">Message:</label>
+                <br>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <br><br>
+
+                <input type="submit" value="Send" class="button">
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Hasnat Kaify. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
